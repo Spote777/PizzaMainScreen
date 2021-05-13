@@ -21,14 +21,12 @@ class BannerView: UIView {
         cv.delegate = self
         cv.dataSource = self
         cv.register(BannerViewCell.self, forCellWithReuseIdentifier: identifier)
-        cv.backgroundColor = .white
+        cv.backgroundColor = .clear
         return cv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .white
         
         addSubview(collectionView)
         
@@ -62,6 +60,6 @@ extension BannerView: UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: 112)
+        return CGSize(width: 300, height: 112)
     }
 }

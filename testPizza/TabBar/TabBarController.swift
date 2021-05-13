@@ -43,7 +43,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     func configureTabBar() {
         tabBar.barTintColor = .white
         tabBar.isTranslucent = false
-        tabBar.unselectedItemTintColor = .gray
-        tabBar.tintColor = .red
+        tabBar.unselectedItemTintColor = .grayColor
+        tabBar.tintColor = .redColor
     }
 }

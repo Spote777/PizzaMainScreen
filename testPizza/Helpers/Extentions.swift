@@ -41,8 +41,8 @@ extension UIColor {
         return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
     }
     
-    static let red = UIColor.color(red: 253, green: 58, blue: 105)
-    static let gray = UIColor.color(red: 195, green: 196, blue: 201)
-    static let lightGray = UIColor.color(red: 243, green: 245, blue: 249)
+    static let redColor = UIColor.color(red: 253, green: 58, blue: 105)
+    static let grayColor = UIColor.color(red: 195, green: 196, blue: 201)
+    static let lightGrayColor = UIColor.color(red: 243, green: 245, blue: 249)
 }
 

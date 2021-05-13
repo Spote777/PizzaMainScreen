@@ -14,7 +14,6 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        self.view.backgroundColor = .systemBackground
         
     }
     
@@ -25,7 +24,7 @@ class MenuViewController: UIViewController {
     }
     
     func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = .systemBackground
+        navigationController?.navigationBar.barTintColor = .lightGrayColor
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         navigationItem.leftBarButtonItem = .init(title: "Москва ∨", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem?.tintColor = .black

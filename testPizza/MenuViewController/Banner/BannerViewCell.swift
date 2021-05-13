@@ -12,9 +12,9 @@ class BannerViewCell: UICollectionViewCell {
     private let bannerImage: UIImageView = {
         let image = UIImageView(image:#imageLiteral(resourceName: "banner2"))
         image.clipsToBounds = true
-        image.layer.cornerRadius = 10
         image.layer.masksToBounds = true
-        image.contentMode = .scaleAspectFill
+        image.layer.cornerRadius = 10
+        image.contentMode = .scaleToFill
         image.sizeToFit()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -26,13 +26,13 @@ class BannerViewCell: UICollectionViewCell {
         addSubview(contentView)
         contentView.addSubview(bannerImage)
         
+        contentView.backgroundColor = .lightGrayColor
+        
         bannerImage.snp.makeConstraints() {
             $0.top.equalToSuperview()
             $0.left.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.right.equalToSuperview()
-            $0.height.equalTo(112)
-            $0.width.equalTo(300)
         }
     }
     
