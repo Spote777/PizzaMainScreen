@@ -21,6 +21,12 @@ class MenuView: UIView {
         return cv
     }()
     
+    lazy var productsView: ProductsView = {
+        let pv = ProductsView()
+        pv.translatesAutoresizingMaskIntoConstraints = false
+        return pv
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -28,6 +34,7 @@ class MenuView: UIView {
         
         addSubview(bannerView)
         addSubview(categoriesView)
+        addSubview(productsView)
         
         bannerView.snp.makeConstraints() {
             $0.top.equalTo(76)
@@ -43,6 +50,14 @@ class MenuView: UIView {
             $0.right.equalToSuperview()
             $0.width.equalTo(88)
             $0.height.equalTo(32)
+        }
+        
+        productsView.snp.makeConstraints() {
+            $0.top.equalTo(categoriesView.snp.bottom).offset(24)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.width.equalToSuperview()
         }
     }
     

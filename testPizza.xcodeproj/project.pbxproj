@@ -176,8 +176,8 @@
 		A2FF28AE264DC2CA000E32FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2FF28AF264DC31B000E32FC /* ProductsCell.swift */,
 				A2FF28B1264DC32A000E32FC /* ProductsView.swift */,
+				A2FF28AF264DC31B000E32FC /* ProductsCell.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
