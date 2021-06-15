@@ -9,12 +9,16 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTabBarItems()
         configureTabBar()
     }
+    
+    // MARK: - Methods
     
     private func configureTabBarItems() {
         viewControllers = [

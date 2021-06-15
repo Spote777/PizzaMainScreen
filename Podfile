@@ -7,4 +7,6 @@ target 'testPizza' do
 
   # Pods for testPizza
 	pod 'SnapKit'
+	pod 'Alamofire'
+	
 end

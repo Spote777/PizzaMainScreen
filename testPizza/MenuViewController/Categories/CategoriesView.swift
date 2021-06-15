@@ -9,7 +9,9 @@ import UIKit
 
 class CategoriesView: UIView {
     
-    private let identifier = "categoryCell"
+    // MARK: - Properties
+
+    let identifier = "categoryCell"
     
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -17,13 +19,13 @@ class CategoriesView: UIView {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 8
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.delegate = self
-        cv.dataSource = self
         cv.register(CategoriesViewCell.self, forCellWithReuseIdentifier: identifier)
         cv.backgroundColor = .clear
         return cv
     }()
     
+    // MARK: - Constraints
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,27 +44,3 @@ class CategoriesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-extension CategoriesView: UICollectionViewDelegate,
-                          UICollectionViewDataSource,
-                          UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CategoriesViewCell
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 88, height: 32)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-}
-

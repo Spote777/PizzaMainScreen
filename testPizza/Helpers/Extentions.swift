@@ -10,15 +10,15 @@ import UIKit
 // MARK: - extension UIImageView
 
 extension UIImageView {
-    func load(urlString: String) {
-        guard let url = URL(string: urlString) else { return }
+    func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
-            guard let data = try? Data(contentsOf: url) else { return }
-            guard let image = UIImage(data: data) else { return }
-            DispatchQueue.main.async {
-                self?.image = image
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
             }
-            
         }
     }
 }
@@ -44,5 +44,17 @@ extension UIColor {
     static let redColor = UIColor.color(red: 253, green: 58, blue: 105)
     static let grayColor = UIColor.color(red: 195, green: 196, blue: 201)
     static let lightGrayColor = UIColor.color(red: 243, green: 245, blue: 249)
+}
+
+// MARK: - extension setSelected
+
+func setSelected(_ isSelected: Bool, label: UILabel) {
+    if isSelected {
+        label.layer.borderColor = UIColor.color(red: 253, green: 58, blue: 105, alpha: 0.1).cgColor
+        label.backgroundColor = UIColor.color(red: 253, green: 58, blue: 105, alpha: 0.2)
+    } else {
+        label.layer.borderColor = UIColor.red.cgColor
+        label.backgroundColor = .clear
+    }
 }
 

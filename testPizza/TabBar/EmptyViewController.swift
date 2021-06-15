@@ -9,6 +9,8 @@ import UIKit
 
 class EmptyViewController: UIViewController {
     
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

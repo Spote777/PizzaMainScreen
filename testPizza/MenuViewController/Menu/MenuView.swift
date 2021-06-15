@@ -9,6 +9,8 @@ import UIKit
 
 class MenuView: UIView {
     
+    // MARK: - Properties
+
     lazy var bannerView: BannerView = {
         let bv = BannerView()
         bv.translatesAutoresizingMaskIntoConstraints = false
@@ -21,12 +23,14 @@ class MenuView: UIView {
         return cv
     }()
     
-    lazy var productsView: ProductsView = {
-        let pv = ProductsView()
+    lazy var productsView: FoodView = {
+        let pv = FoodView()
         pv.translatesAutoresizingMaskIntoConstraints = false
         return pv
     }()
     
+    // MARK: - Constraints
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
