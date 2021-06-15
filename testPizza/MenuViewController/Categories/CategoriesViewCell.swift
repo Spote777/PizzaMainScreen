@@ -9,15 +9,16 @@ import UIKit
 
 class CategoriesViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+
     override var isSelected: Bool {
         didSet {
-            setSelected(isSelected)
+            setSelected(isSelected, label: сategoryLabel)
         }
     }
     
-    private let сategoryLabel: UILabel = {
+     let сategoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Пицца"
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = .redColor
         label.textAlignment = .center
@@ -30,6 +31,8 @@ class CategoriesViewCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - Constraints
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -48,15 +51,4 @@ class CategoriesViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func setSelected(_ isSelected: Bool) {
-        if isSelected {
-            сategoryLabel.layer.borderColor = UIColor.color(red: 253, green: 58, blue: 105, alpha: 0.1).cgColor
-            сategoryLabel.backgroundColor = UIColor.color(red: 253, green: 58, blue: 105, alpha: 0.2)
-        } else {
-            сategoryLabel.layer.borderColor = UIColor.red.cgColor
-            сategoryLabel.backgroundColor = .clear
-        }
-    }
-    
 }

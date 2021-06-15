@@ -9,23 +9,25 @@ import UIKit
 
 class BannerViewCell: UICollectionViewCell {
     
-    private let bannerImage: UIImageView = {
-        let image = UIImageView(image:#imageLiteral(resourceName: "banner2"))
+    // MARK: - Properties
+
+     let bannerImage: UIImageView = {
+        let image = UIImageView()
         image.clipsToBounds = true
         image.layer.masksToBounds = true
         image.layer.cornerRadius = 10
-        image.contentMode = .scaleToFill
-        image.sizeToFit()
+        image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
+    // MARK: - Constraints
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+       
         addSubview(contentView)
         contentView.addSubview(bannerImage)
-        
         contentView.backgroundColor = .lightGrayColor
         
         bannerImage.snp.makeConstraints() {
